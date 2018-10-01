@@ -1,16 +1,16 @@
 // TODO
 
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
-var App = () => (
-	<div id="app">Some cliche salutation</div>
-);
 
-var GroceryList = () => (
-	<ul>
-		<GroceryItemKale />
-		<GroceryItemCucumber />
-	</ul>
+var GroceryList = (props) => (
+	<div>
+		<h2>My Grocery List</h2>
+		<ul>
+			<li> {props.items[0]} </li>
+			<li> {props.items[1]} </li>
+		</ul>
+	</div>
 
 );
 
@@ -22,4 +22,9 @@ var GroceryItemCucumber = () => {
 	<li>Cucumber</li>
 }
 
-ReactDOM.render(<GroceryList />, document.getElementById("app"));
+var GroceryListItem = () => {
+
+}
+
+ReactDOM.render(<GroceryList items={['Kale', 'Milk', 'Water']}/>, document.getElementById("app"));
+//ReactDOM.render(<App />, document.getElementById("body"))
