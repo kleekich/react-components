@@ -8,12 +8,19 @@ var App = () => (
 	</div>
 );
 
-var GroceryList = (props) => (
-	<ul>
-		<li> {props.items[0]} </li>
-		<li> {props.items[1]} </li>
-	</ul>
-);
+var GroceryList = (props) => {
+	var onListItemClick = (event) => {
+		console.log('I got clicked'+ event);
+	}
+
+	return (
+		<ul>
+			<li onClick={onListItemClick}> {props.items[0]} </li>
+			<li> {props.items[1]} </li>
+		</ul>
+	)
+	
+};
 
 
 ReactDOM.render(<App />, document.getElementById("app"));
